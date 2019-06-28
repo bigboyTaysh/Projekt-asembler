@@ -1,0 +1,66 @@
+#define BS_CENTER 0x300L
+#define BS_PUSHBUTTON 0x0L
+#define ES_LEFT 0x0L
+#define SS_LEFT 0x0L
+#define WS_BORDER 0x800000L
+#define WS_CHILD 0x40000000L
+#define WS_CAPTION 0x0C00000L
+#define WS_MINIMIZEBOX 0x00020000L 
+#define WS_MAXIMIZEBOX 0x00010000L
+#define WS_POPUP 0x80000000L
+#define WS_SYSMENU 0x00080000L
+#define WS_TABSTOP 0x10000L 
+#define WS_VISIBLE 0x10000000L
+#define CBS_DROPDOWNLIST 3h
+#define CBS_HASSTRINGS 200h
+//--------------------------------
+#define STR1 1  // 1 to identyfikator wiersza
+#define STR2 2  // 2 to identyfikator wiersza
+#define STR3 3  // 3 to identyfikator wiersza
+#define STR4 4  // 4 to identyfikator wiersza
+#define STR5 5  // 5 to identyfikator wiersza
+
+DLG1 DIALOG 0, 0, 250, 150
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX
+CAPTION "Okienko"
+FONT 11, "Arial"
+{
+	CONTROL "", 1, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 10, 10, 40, 16
+	CONTROL "", 2, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 50, 10, 40, 16
+	CONTROL "", 3, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 90, 10, 40, 16
+	CONTROL "", 4, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 10, 30, 40, 16
+	CONTROL "", 5, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 50, 30, 40, 16
+	CONTROL "", 6, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 90, 30, 40, 16
+	CONTROL "", 7, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 10, 50, 40, 16
+	CONTROL "", 8, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 50, 50, 40, 16
+	CONTROL "", 9, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 90, 50, 40, 16
+	CONTROL "", 11, "EDIT", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 74, 80, 100, 12
+
+  // 1 to identyfikator obiektu graficznego
+	CONTROL "", 10, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 170, 30, 70, 16
+	CONTROL "", 21, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | 0, 89, 70, 100, 10
+  // 2 to identyfikator obiektu graficznego
+	CONTROL "=",105,"BUTTON",BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 135, 30, 30, 16
+	CONTROL "Wczytaj",106,"BUTTON",BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 96, 95, 60, 16
+	CONTROL "Zapisz",107,"BUTTON",BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 96, 115, 60, 16
+  // 105 to identyfikator obiektu graficznego 
+}
+
+STRINGTABLE {
+	STR1 "Komunikat"
+	STR2 "B³¹d!"
+	STR3 "B³¹d wczytywania pliku!"
+	STR4 "Nazwa pliku z danymi"
+	STR5 "B³¹d zapisu!"
+
+}
+
+MENU1 MENU {
+	POPUP "Plik" {
+		MENUITEM "Zamknij", 101 // 101 to identyfikator punktu menu
+	}
+
+	POPUP "Edycja"{
+	MENUITEM "Wyczyœæ", 104 // 104 to identyfikator punktu menu
+	}
+} 
